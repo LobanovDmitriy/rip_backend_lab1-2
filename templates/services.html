@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Список услуг{% endblock %}
+
+{% block content %}
+<ul>
+    {% for service in data.services %}
+        <li>
+            <a href="{% url 'service_url' service.idservice %}"> {{ service.name }} </a>
+            <p>{{service.description}}</p>
+        </li>
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+{% endblock %}

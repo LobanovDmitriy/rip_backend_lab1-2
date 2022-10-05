@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ data.service.id }}{% endblock %}
+
+{% block content %}
+    <div>Название: {{ data.service.name }}</div>
+        <div>Описание: {{ data.service.description }}</div>
+{% endblock %}

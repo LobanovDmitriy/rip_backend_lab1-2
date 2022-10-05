@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+    Добрый день! <br>
+    Сегодня {{ data.current_date }} <br>
+    У нас вы можете:
+<ul>
+    {% for var in data.list %}
+        {% if var == 'обследование' %}
+            <li>Пройти {{ var }}</li>
+        {% elif var == 'анализы' %}
+            <li>Сдать {{ var }}</li>
+        {% else %}
+            <li>Лечь в {{ var }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+</body>
+{% endblock %}

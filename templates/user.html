@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ data.user.iduser }}{% endblock %}
+
+{% block content %}
+    <div>Имя: {{ data.users.user_name }}</div>
+    <div>email: {{ data.users.user_email }}</div>
+<p>Список заказов:</p>
+<ul>
+    {% for service in data.user_services %}
+        <li>
+            <p>Дата заказа: {{ service.order_date }}</p>
+        </li>
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+{% endblock %}
